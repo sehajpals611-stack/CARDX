@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CardX — Designer (Front & Back)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CardX — Designer</h1>
+    <p class="subtitle">Logo • Full details • Single QR • Live theme • Download front/back/both</p>
+  </header>
+
+  <main class="app">
+    <!-- Controls -->
+    <aside class="controls">
+      <h2>Theme</h2>
+      <label class="row">
+        <span>Card Color</span>
+        <input id="colorPicker" type="color" value="#0b0b0b">
+      </label>
+
+      <hr>
+
+      <h2>Front (Details)</h2>
+      <label class="file">Upload Logo
+        <input id="logoInput" type="file" accept="image/*">
+      </label>
+
+      <input id="name"     type="text" placeholder="Full Name"      />
+      <input id="title"    type="text" placeholder="Job Title"       />
+      <input id="business" type="text" placeholder="Business Name"   />
+      <input id="phone"    type="text" placeholder="Phone"           />
+      <input id="email"    type="text" placeholder="Email"           />
+      <input id="website"  type="text" placeholder="Website"         />
+      <input id="address"  type="text" placeholder="Address"         />
+
+      <hr>
+
+      <h2>Back (QR)</h2>
+      <input id="qrInput" type="text" placeholder="QR Code URL (https://...)" />
+
+      <div class="actions">
+        <button id="downloadFront" class="btn">Download Front</button>
+        <button id="downloadBack"  class="btn">Download Back</button>
+        <button id="downloadBoth"  class="btn primary">Download Both</button>
+      </div>
+
+      <p class="note">Tip: change color, upload a logo, enter details and a URL — then download.</p>
+    </aside>
+
+    <!-- Preview -->
+    <section class="preview">
+      <div id="cardFront" class="card card-front">
+        <div class="left">
+          <img id="logoPreview" alt="Logo preview" />
+        </div>
+        <div class="right">
+          <h2 id="cName">Your Name</h2>
+          <p id="cTitle">Job Title</p>
+          <h3 id="cBusiness">Business Name</h3>
+
+          <p id="cPhone">📞 Phone: ----</p>
+          <p id="cEmail">📧 Email: ----</p>
+          <p id="cWebsite">🌐 Website: ----</p>
+          <p id="cAddress">📍 Address: ----</p>
+        </div>
+      </div>
+
+      <div id="cardBack" class="card card-back">
+        <h3 class="scan-title">SCAN TO CONNECT</h3>
+        <div class="qr-wrapper">
+          <canvas id="qrCanvas" width="180" height="180"></canvas>
+          <p class="qr-label">Your Link</p>
+        </div>
+        <p class="back-note">CardX — Smart Digital Business Cards</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+  <!-- app JS -->
+  <script src="script.js"></script>
+</body>
+</html>
